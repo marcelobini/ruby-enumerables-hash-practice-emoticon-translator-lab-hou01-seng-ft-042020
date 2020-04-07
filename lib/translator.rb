@@ -16,7 +16,7 @@ def load_library(file)
 end
 
 def get_japanese_emoticon(library, emoticon)
-   # code goes here		   
+   # code goes here
    dictionary = load_library(library)
    return "Sorry, that emoticon was not found" if dictionary["get_emoticon"][emoticon].nil?
    dictionary["get_emoticon"][emoticon]
