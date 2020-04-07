@@ -15,11 +15,12 @@ def load_library(file)
   new_hash
 end
 
-def get_japanese_emoticon(file_path, emoticon)
-  emoticons = load_library(file_path)
-  emoji = emoticons.values.find {|faces| faces[0] == emoticon}
-  emoji == nil ? "Sorry, that emoticon was not found" : emoji[1]
-end
+def get_japanese_emoticon(library, emoticon)
+   # code goes here		   
+   dictionary = load_library(library)
+   return "Sorry, that emoticon was not found" if dictionary["get_emoticon"][emoticon].nil?
+   dictionary["get_emoticon"][emoticon]
+ end		 
 
 def get_english_meaning(file_path, emoticon)
   emoticons = load_library(file_path)
