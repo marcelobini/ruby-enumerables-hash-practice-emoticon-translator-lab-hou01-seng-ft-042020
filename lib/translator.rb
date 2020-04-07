@@ -15,7 +15,7 @@ def load_library(file)
   new_hash
 end
 
-def get_japanese_emoticon(library, emoticon)
+def get_japanese_emoticon(file, emoticon)
    # code goes here
    dictionary = load_library(library)
    return "Sorry, that emoticon was not found" if dictionary["get_emoticon"][emoticon].nil?
@@ -28,4 +28,3 @@ def get_japanese_emoticon(library, emoticon)
     return "Sorry, that emoticon was not found" if dictionary["get_meaning"][emoticon].nil?
     dictionary["get_meaning"][emoticon]
   end
-end 
