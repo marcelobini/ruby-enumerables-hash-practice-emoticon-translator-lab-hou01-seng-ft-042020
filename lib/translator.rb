@@ -15,14 +15,11 @@ def load_library(file)
   new_hash
 end
 
-def get_japanese_emoticon(file_path = './lib/emoticons.yml', english_emoticon)
-  library = load_library(file_path)
-  if library["get_emoticon"].include?(english_emoticon)
-    library["get_emoticon"][english_emoticon]
-  else
-    "Sorry, that emoticon was not found"
-  end
-end		 
+def get_japanese_emoticon(file_path, emoticon)
+  emoticons = load_library(file_path)
+  emoji = emoticons.values.find {|faces| faces[0] == emoticon}
+  emoji == nil ? "Sorry, that emoticon was not found" : emoji[1]
+end
 
  def get_english_meaning(file_path, emoticon)
    hash = load_library(file_path)
